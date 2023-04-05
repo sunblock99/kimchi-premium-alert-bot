@@ -1,8 +1,9 @@
 import telegram
+import asyncio
+from myToken import *
 
-chat_id = 1162346320
+async def main():
+    bot = telegram.Bot(token = token)
+    await bot.send_message(chat_id,'테스트!!')
 
-token = "6243318407:AAEMbNyi5srikgf_mMAe87Dh9sfj86QW73"
-bot = telegram.Bot(token)
-updates = bot.getUpdates()
-print(updates[0].mesage.chat_id)
+asyncio.run(main()) #봇 실행하는 코드
